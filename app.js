@@ -8,20 +8,21 @@ let holdbutton = document.querySelector(".btn--hold");
 
 let player1div = document.querySelector(".player--0");
 let player2div = document.querySelector(".player--1");
+let container = document.querySelector(".container");
 
 
-
-
+let dicelist = [];
 rollbutton.addEventListener("click", () => {
   let mylist = [1, 2, 3, 4, 5, 6];
 
   a = Math.floor(Math.random() * 6);
   console.log(mylist[a]);
-  let container = document.querySelector(".container");
+  
 
   let image1 = document.createElement("img");
   image1.src = `./images/dice-${mylist[a]}.png`;
   image1.classList.add("dice");
+  dicelist.push(image1)
 
   container.appendChild(image1);
 
@@ -75,4 +76,8 @@ newbutton.addEventListener("click", () => {
     player2current.innerHTML = 0;
     player1score.innerHTML = 0;
     player2score.innerHTML = 0;
+
+    for(let i = 0; i < dicelist.length; i++) {
+      container.removeChild(dicelist[i])
+    }
 })
