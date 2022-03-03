@@ -1,5 +1,5 @@
 
-<img src = "roll.png"> 
+<img src = "roll.PNG"> 
 
 # roll-dice-game
 #I coppied html and css.
